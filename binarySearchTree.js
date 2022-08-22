@@ -93,7 +93,25 @@ class BST{
         // return if found
         return curr;
     }
+
+    // preorder -----------  from here  ------------------->>>>>>>>>>>>>>>>>>
+    preOrder(){
+        preOrderHelperFunction(this.root);
+    }
+
+
 }
+
+function preOrderHelperFunction(root){
+    if (root !== null) {
+        console.log(root.data);
+        preOrderHelperFunction(root.left);
+        preOrderHelperFunction(root.right);
+    }       
+}
+
+
+
 
 const bst = new BST();
 bst.insert(4)
@@ -107,7 +125,7 @@ console.log(bst);
 console.log('bst.search(1): ', bst.search(1));
 console.log('bst.search(7): ', bst.search(7));
 console.log('bst.search(3): ', bst.search(3));
-
+bst.preOrder()
 
 /*
 
